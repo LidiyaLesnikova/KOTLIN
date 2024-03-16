@@ -16,10 +16,12 @@ fun main() {
         "exit" -> println("Goodbye")
         "help" -> {
             println("Help output\n")
-            main()}
+            DZ2.main()
+        }
         else -> {
             answerSplit(answer.split(" "))
-            main()}
+            DZ2.main()
+        }
     }
 }
 
