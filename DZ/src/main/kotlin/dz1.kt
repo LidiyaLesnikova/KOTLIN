@@ -6,21 +6,24 @@ add <Имя> email <Адрес электронной почты>
 После выполнения команды, кроме команды exit, программа ждёт следующую команду.*/
 
 fun main() {
-    println("Enter one of the commands:\n" +
-            " exit\n" +
-            " help\n" +
-            " add <Имя> phone <Номер телефона>\n" +
-            " add <Имя> email <Адрес электронной почты>\n")
-    val answer = readlnOrNull().toString();
-    when (answer) {
-        "exit" -> println("Goodbye")
-        "help" -> {
-            println("Help output\n")
-            DZ2.main()
-        }
-        else -> {
-            answerSplit(answer.split(" "))
-            DZ2.main()
+    var flag = true
+    while (flag) {
+        println(
+            "Enter one of the commands:\n" +
+                    " exit\n" +
+                    " help\n" +
+                    " add <Имя> phone <Номер телефона>\n" +
+                    " add <Имя> email <Адрес электронной почты>\n"
+        )
+        val answer = readlnOrNull().toString();
+        when (answer) {
+            "exit" -> {
+                println("Goodbye")
+                flag = false
+            }
+            "help" -> println("Help output\n")
+
+            else -> answerSplit(answer.split(" "))
         }
     }
 }
