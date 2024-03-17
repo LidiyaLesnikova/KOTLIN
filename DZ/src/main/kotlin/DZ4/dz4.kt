@@ -80,7 +80,7 @@ fun readCommand(args: List<String>): Command {
 
 fun main() {
     var flag = true
-    var person = Person()
+    var person: Person = Person()
 
     while (flag) {
         println(
